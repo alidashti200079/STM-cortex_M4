@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RootElement>
+  <SubElement1 attr1="attrValue1"><![CDATA[CDATA1]]><!--comment1-->
+    characters1
+  </SubElement1>
+  <SubElement2 attr2="attrValue2"><![CDATA[CDATA2]]><!--comment2-->
+    characters2
+  </SubElement2>
+  <TextElement>text</TextElement>
+</RootElement>

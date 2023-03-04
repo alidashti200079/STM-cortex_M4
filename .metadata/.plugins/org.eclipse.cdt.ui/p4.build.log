@@ -1,0 +1,24 @@
+16:27:18 **** Build of configuration Debug for project p4 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f3xx_it.d" -MT"Core/Src/stm32f3xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_it.o"
+../Core/Src/stm32f3xx_it.c: In function 'TIM3_IRQHandler':
+../Core/Src/stm32f3xx_it.c:348:2: warning: implicit declaration of function 'show' [-Wimplicit-function-declaration]
+  348 |  show(mLight, mTemp);
+      |  ^~~~
+arm-none-eabi-gcc -o "p4.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\STM\p4\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="p4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: p4.elf
+ 
+arm-none-eabi-size   p4.elf 
+arm-none-eabi-objdump -h -S  p4.elf  > "p4.list"
+arm-none-eabi-objcopy  -O binary  p4.elf  "p4.bin"
+   text	   data	    bss	    dec	    hex	filename
+  25096	     28	   2940	  28064	   6da0	p4.elf
+Finished building: default.size.stdout
+ 
+Finished building: p4.bin
+ 
+Finished building: p4.list
+ 
+
+16:27:20 Build Finished. 0 errors, 1 warnings. (took 2s.500ms)
+

@@ -1,0 +1,213 @@
+16:25:15 **** Incremental Build of configuration Debug for project spaceInvaders ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f3xx_it.d" -MT"Core/Src/stm32f3xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_it.o"
+../Core/Src/main.c: In function 'menu':
+../Core/Src/main.c:371:2: warning: implicit declaration of function 'musicOn' [-Wimplicit-function-declaration]
+  371 |  musicOn();
+      |  ^~~~~~~
+../Core/Src/main.c:411:3: warning: implicit declaration of function 'about'; did you mean 'abort'? [-Wimplicit-function-declaration]
+  411 |   about();
+      |   ^~~~~
+      |   abort
+../Core/Src/main.c:414:3: warning: implicit declaration of function 'startGame'; did you mean 'start_page'? [-Wimplicit-function-declaration]
+  414 |   startGame();
+      |   ^~~~~~~~~
+      |   start_page
+../Core/Src/main.c:416:3: warning: implicit declaration of function 'boss_fight' [-Wimplicit-function-declaration]
+  416 |   boss_fight();
+      |   ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:421:6: warning: conflicting types for 'about'
+  421 | void about() {
+      |      ^~~~~
+../Core/Src/main.c:411:3: note: previous implicit declaration of 'about' was here
+  411 |   about();
+      |   ^~~~~
+../Core/Src/main.c: In function 'about':
+../Core/Src/main.c:446:11: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  446 |   sprintf(Time, " %2d:%2d:%2d ", mytime.Hours, mytime.Minutes, mytime.Seconds);
+      |           ^~~~
+      |           |
+      |           uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:447:9: warning: pointer targets in passing argument 1 of 'print' differ in signedness [-Wpointer-sign]
+  447 |   print(Time);
+      |         ^~~~
+      |         |
+      |         uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LiquidCrystal.h:85:14: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   85 | size_t print(const char []);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:448:11: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  448 |   sprintf(Date, " 20%d/%d/%d", mydate.Year, mydate.Month, mydate.Date);
+      |           ^~~~
+      |           |
+      |           uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:449:9: warning: pointer targets in passing argument 1 of 'print' differ in signedness [-Wpointer-sign]
+  449 |   print(Date);
+      |         ^~~~
+      |         |
+      |         uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LiquidCrystal.h:85:14: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   85 | size_t print(const char []);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:462:6: warning: conflicting types for 'startGame'
+  462 | void startGame() {
+      |      ^~~~~~~~~
+../Core/Src/main.c:414:3: note: previous implicit declaration of 'startGame' was here
+  414 |   startGame();
+      |   ^~~~~~~~~
+../Core/Src/main.c: In function 'startGame':
+../Core/Src/main.c:485:10: warning: pointer targets in passing argument 1 of 'print' differ in signedness [-Wpointer-sign]
+  485 |    print(name);
+      |          ^~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LiquidCrystal.h:85:14: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   85 | size_t print(const char []);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:565:21: warning: implicit declaration of function 'game_mode1' [-Wimplicit-function-declaration]
+  565 |    if ( mode == 1 ) game_mode1();
+      |                     ^~~~~~~~~~
+../Core/Src/main.c:566:26: warning: implicit declaration of function 'game_mode2' [-Wimplicit-function-declaration]
+  566 |    else if ( mode == 2 ) game_mode2();
+      |                          ^~~~~~~~~~
+../Core/Src/main.c:567:26: warning: implicit declaration of function 'game_mode3' [-Wimplicit-function-declaration]
+  567 |    else if ( mode == 3 ) game_mode3();
+      |                          ^~~~~~~~~~
+../Core/Src/main.c: In function 'bump':
+../Core/Src/main.c:726:6: warning: implicit declaration of function 'bump_1'; did you mean 'bump'? [-Wimplicit-function-declaration]
+  726 |      bump_1();
+      |      ^~~~~~
+      |      bump
+../Core/Src/main.c:749:6: warning: implicit declaration of function 'bump_2'; did you mean 'bump'? [-Wimplicit-function-declaration]
+  749 |      bump_2();
+      |      ^~~~~~
+      |      bump
+../Core/Src/main.c:765:5: warning: implicit declaration of function 'bump_3'; did you mean 'bump'? [-Wimplicit-function-declaration]
+  765 |     bump_3();
+      |     ^~~~~~
+      |     bump
+../Core/Src/main.c:793:4: warning: implicit declaration of function 'victory' [-Wimplicit-function-declaration]
+  793 |    victory(kill);
+      |    ^~~~~~~
+../Core/Src/main.c:798:4: warning: implicit declaration of function 'losing' [-Wimplicit-function-declaration]
+  798 |    losing(kill);
+      |    ^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:860:6: warning: conflicting types for 'victory'
+  860 | void victory( int kill ) {
+      |      ^~~~~~~
+../Core/Src/main.c:793:4: note: previous implicit declaration of 'victory' was here
+  793 |    victory(kill);
+      |    ^~~~~~~
+../Core/Src/main.c: In function 'victory':
+../Core/Src/main.c:884:9: warning: pointer targets in passing argument 1 of 'print' differ in signedness [-Wpointer-sign]
+  884 |   print(name);
+      |         ^~~~
+      |         |
+      |         uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LiquidCrystal.h:85:14: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   85 | size_t print(const char []);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:899:6: warning: conflicting types for 'losing'
+  899 | void losing( int kill ) {
+      |      ^~~~~~
+../Core/Src/main.c:798:4: note: previous implicit declaration of 'losing' was here
+  798 |    losing(kill);
+      |    ^~~~~~
+../Core/Src/main.c: In function 'losing':
+../Core/Src/main.c:923:9: warning: pointer targets in passing argument 1 of 'print' differ in signedness [-Wpointer-sign]
+  923 |   print(name);
+      |         ^~~~
+      |         |
+      |         uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LiquidCrystal.h:85:14: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   85 | size_t print(const char []);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:939:6: warning: conflicting types for 'game_mode1'
+  939 | void game_mode1() {
+      |      ^~~~~~~~~~
+../Core/Src/main.c:565:21: note: previous implicit declaration of 'game_mode1' was here
+  565 |    if ( mode == 1 ) game_mode1();
+      |                     ^~~~~~~~~~
+../Core/Src/main.c: In function 'game_mode1':
+../Core/Src/main.c:941:2: warning: implicit declaration of function 'silent_' [-Wimplicit-function-declaration]
+  941 |  silent_();
+      |  ^~~~~~~
+../Core/Src/main.c:970:4: warning: implicit declaration of function 'autoShip' [-Wimplicit-function-declaration]
+  970 |    autoShip(col);
+      |    ^~~~~~~~
+../Core/Src/main.c:999:4: warning: implicit declaration of function 'shot_1' [-Wimplicit-function-declaration]
+  999 |    shot_1();
+      |    ^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1098:6: warning: conflicting types for 'game_mode2'
+ 1098 | void game_mode2() {
+      |      ^~~~~~~~~~
+../Core/Src/main.c:566:26: note: previous implicit declaration of 'game_mode2' was here
+  566 |    else if ( mode == 2 ) game_mode2();
+      |                          ^~~~~~~~~~
+../Core/Src/main.c:1257:6: warning: conflicting types for 'game_mode3'
+ 1257 | void game_mode3() {
+      |      ^~~~~~~~~~
+../Core/Src/main.c:567:26: note: previous implicit declaration of 'game_mode3' was here
+  567 |    else if ( mode == 3 ) game_mode3();
+      |                          ^~~~~~~~~~
+../Core/Src/main.c:1572:6: warning: conflicting types for 'boss_fight'
+ 1572 | void boss_fight() {
+      |      ^~~~~~~~~~
+../Core/Src/main.c:416:3: note: previous implicit declaration of 'boss_fight' was here
+  416 |   boss_fight();
+      |   ^~~~~~~~~~
+../Core/Src/main.c: In function 'boss_fight':
+../Core/Src/main.c:1590:2: warning: implicit declaration of function 'bossfightmelody' [-Wimplicit-function-declaration]
+ 1590 |  bossfightmelody();
+      |  ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1736:6: warning: conflicting types for 'autoShip'
+ 1736 | void autoShip( int col ) {
+      |      ^~~~~~~~
+../Core/Src/main.c:970:4: note: previous implicit declaration of 'autoShip' was here
+  970 |    autoShip(col);
+      |    ^~~~~~~~
+../Core/Src/main.c: In function 'about':
+../Core/Src/main.c:446:26: warning: ':' directive writing 1 byte into a region of size 0 [-Wformat-overflow=]
+  446 |   sprintf(Time, " %2d:%2d:%2d ", mytime.Hours, mytime.Minutes, mytime.Seconds);
+      |                          ^
+../Core/Src/main.c:446:3: note: 'sprintf' output between 11 and 14 bytes into a destination of size 6
+  446 |   sprintf(Time, " %2d:%2d:%2d ", mytime.Hours, mytime.Minutes, mytime.Seconds);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "spaceInvaders.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\STM\spaceInvaders\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spaceInvaders.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spaceInvaders.elf
+ 
+arm-none-eabi-size   spaceInvaders.elf 
+arm-none-eabi-objdump -h -S  spaceInvaders.elf  > "spaceInvaders.list"
+arm-none-eabi-objcopy  -O binary  spaceInvaders.elf  "spaceInvaders.bin"
+   text	   data	    bss	    dec	    hex	filename
+  58988	    708	   8172	  67868	  1091c	spaceInvaders.elf
+Finished building: default.size.stdout
+ 
+Finished building: spaceInvaders.bin
+ 
+Finished building: spaceInvaders.list
+ 
+
+16:25:16 Build Finished. 0 errors, 33 warnings. (took 1s.234ms)
+

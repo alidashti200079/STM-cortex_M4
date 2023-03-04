@@ -1,0 +1,8 @@
+main.c:3:6:initForLights	32	static
+main.c:14:6:initForBlueButton	32	static
+main.c:26:6:initForSevenSeg	32	static
+main.c:37:6:initForLED	32	static
+main.c:48:6:turnOnLights	16	static
+main.c:94:6:count	16	static
+main.c:200:6:LED	16	static
+main.c:239:5:main	24	static
